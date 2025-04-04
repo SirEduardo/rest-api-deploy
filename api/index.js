@@ -1,8 +1,8 @@
 const express = require('express')
 const crypto = require('node:crypto')
 const cors = require('cors')
-const movies = require('./movies.json')
-const { validateMovie, validatePartialMovie } = require('./schemas/movies')
+const movies = require('../movies.json')
+const { validateMovie, validatePartialMovie } = require('../schemas/movies')
 
 const app = express()
 app.use(express.json()) // middleware para parsear el body a json
@@ -85,6 +85,8 @@ app.delete('/movies/:id', (req, res) => {
 
 const PORT = process.env.PORT ?? 3000
 
-app.listen(PORT, () => {
-  console.log(' Server listening on port http://localhost:3000')
-})
+//app.listen(PORT, () => {
+console.log(' Server listening on port http://localhost:3000')
+//})
+
+module.exports = app
